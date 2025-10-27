@@ -1,0 +1,31 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Design the task management UI",
+      "description": "Create a responsive interface with filters, sorting, and task search.",
+      "status": "in_progress",
+      "priority": "high",
+      "createdAt": "2025-02-20T09:00:00Z",
+      "deadline": "2025-02-25T18:00:00Z"
+    },
+    {
+      "id": 2,
+      "title": "Implement API unit tests",
+      "description": "Cover main CRUD operations for the task API using Jest.",
+      "status": "todo",
+      "priority": "medium",
+      "createdAt": "2025-02-21T11:30:00Z",
+      "deadline": "2025-02-28T17:00:00Z"
+    },
+    {
+      "id": 3,
+      "title": "Optimize server requests",
+      "description": "Reduce the number of HTTP requests and add data caching for better performance.",
+      "status": "done",
+      "priority": "low",
+      "createdAt": "2025-02-18T08:15:00Z",
+      "deadline": "2025-02-22T12:00:00Z"
+    }
+  ]
+}
