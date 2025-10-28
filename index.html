@@ -1,13 +1,145 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>lesson-8</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        background-color: #fafafa;
+      }
+
+      #app {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 100vh;
+      }
+
+      .tasks-section {
+        padding: 20px;
+        border-right: 1px solid #ddd;
+      }
+
+      #task-list {
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 12px;
+      }
+
+      .task {
+        padding: 12px 14px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fff;
+      }
+
+      .task h3 {
+        margin: 0 0 6px;
+        font-size: 16px;
+      }
+
+      .muted {
+        color: #666;
+        font-size: 12px;
+      }
+
+      .form-section {
+        padding: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-width: 400px;
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        font-weight: 500;
+        font-size: 14px;
+      }
+
+      input,
+      select {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+
+      button {
+        align-self: flex-start;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 16px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
   </head>
+
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="tasks-section">
+        <h1>Tasks</h1>
+        <ul id="task-list"></ul>
+        <div id="empty" class="muted" style="display: none">No tasks yet</div>
+        <div id="error" class="muted" style="display: none"></div>
+      </div>
+
+      <div class="form-section">
+        <h2>Create a Task</h2>
+        <form id="task-form">
+          <label>
+            Title
+            <input id="title" name="title" type="text" required />
+          </label>
+
+          <label>
+            Description
+            <input id="description" name="description" type="text" />
+          </label>
+
+          <label>
+            Status
+            <select id="status" name="status">
+              <option value="todo">todo</option>
+              <option value="in_progress">in_progress</option>
+              <option value="done">done</option>
+            </select>
+          </label>
+
+          <label>
+            Priority
+            <select id="priority" name="priority">
+              <option value="low">low</option>
+              <option value="medium">medium</option>
+              <option value="high">high</option>
+            </select>
+          </label>
+
+          <label>
+            Deadline
+            <input id="deadline" name="deadline" type="date" />
+          </label>
+
+          <button type="submit">Create Task</button>
+        </form>
+      </div>
+    </div>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
